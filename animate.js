@@ -1,15 +1,29 @@
-import {operateDisplayText} from './calculator.js';
+import {operate, isOperator} from './calculator.js';
 
 const display = document.getElementById('display');
 
+let a, b, operator;
+
 function buttonClick(clickEvent) {
     const button = clickEvent.target;
-    if (button.textContent == '=') {
-        display.textContent = operateDisplayText(display.textContent);
-    } else if (button.textContent == 'CLR') {
-        display.textContent = '';
+    const symbol = button.textContent;
+    if (button.classList.contains('operator')) {
+        if (symbol == 'CLR') {
+            display.textContent = '';
+        } else if (symbol == '=') {
+            b = Number(display.textContent);
+            a = operate(a, b, operator);
+            display.textContent = a;
+        } else {
+            a = Number(display.textContent);
+            operator = symbol;
+            display.textContent = operator;
+        }
     } else {
-        display.textContent += button.textContent;
+        if (isOperator(display.textContent)) {
+            display.textContent = '';
+        }
+        display.textContent += symbol;
     }
 }
 

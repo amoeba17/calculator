@@ -59,4 +59,4 @@ function operateDisplayText(displayText) {
     return operate(a, b, operator);
 }
 
-export {operateDisplayText};
+export {operate, isOperator};
