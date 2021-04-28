@@ -1,0 +1,44 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+.container {
+    border: 1px solid black;
+}
+
+
+#calculator {
+    margin: 0 auto;
+    height: 600px;
+    width: 400px;
+    background: lightgray;
+}
+
+#display {
+    margin: 50px auto;
+    height: 60px;
+    width: 280px;
+    text-align: right;
+    line-height: 80px;
+    font-size: 30px;
+    background: darkslategray;
+    color: greenyellow; 
+    padding-right: 20px;
+}
+
+#buttons-container {
+    margin: 0 auto;
+    width: 75%;
+    height: 390px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+button {
+    margin: 3px 3px;
+    border-radius: 3px;;
+    font-size: 25px;
+}
