@@ -42,3 +42,12 @@ button {
     border-radius: 3px;;
     font-size: 25px;
 }
+
+.operator {
+    background: orange;
+}
+
+.pressed {
+    background: grey;
+    transition: 100ms;
+}
