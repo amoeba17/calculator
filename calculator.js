@@ -25,6 +25,16 @@ function divide(a, b) {
     }
 }
 
+function pow(b, e) {
+    let result = 1;
+    const operation = (e >= 0) ? multiply : divide;
+    e = Math.abs(e);
+    for (let i = 0; i < e; i++) {
+        result *= b;
+    }
+    return result;
+}
+
 // operate functions
 function operate(a, b, operator) {
     switch(operator) {
@@ -36,27 +46,15 @@ function operate(a, b, operator) {
             return multiply(a, b);
         case '/':
             return divide(a, b);
+        case '^':
+            return pow(a, b);
         default:
             return NaN;
     }
 }
 
 function isOperator(char) {
-    return char == '+' || char == '-' || char == '*' || char == '/';
-}
-
-function operateDisplayText(displayText) {
-    let operator, operatorIndex;
-    for (let i = 0; i < displayText.length; i++) {
-        if (isOperator(displayText[i])) {
-            operator = displayText[i];
-            operatorIndex = i;
-            break;
-        }
-    }
-    let a = Number(displayText.substring(0, operatorIndex));
-    let b = Number(displayText.substring(operatorIndex+1));
-    return operate(a, b, operator);
+    return char == '+' || char == '-' || char == '*' || char == '/' || char == '^';
 }
 
 export {operate, isOperator};

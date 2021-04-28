@@ -14,6 +14,10 @@ function buttonClick(clickEvent) {
             b = Number(display.textContent);
             a = operate(a, b, operator);
             display.textContent = a;
+        } else if (symbol == '%') {
+            a = Number(display.textContent) / 100;
+            operator = symbol;
+            display.textContent = a;
         } else {
             a = Number(display.textContent);
             operator = symbol;
@@ -23,7 +27,12 @@ function buttonClick(clickEvent) {
         if (isOperator(display.textContent)) {
             display.textContent = '';
         }
-        display.textContent += symbol;
+        if (symbol == '(-)') {
+            a = -Number(display.textContent);
+            display.textContent = a;
+        } else {
+            display.textContent += symbol;
+        }
     }
 }
 
