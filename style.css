@@ -47,6 +47,10 @@ button {
     background: orange;
 }
 
+.special {
+    background: orange;
+}
+
 .pressed {
     background: grey;
     transition: 100ms;
