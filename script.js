@@ -26,13 +26,7 @@ function divide(a, b) {
 }
 
 function pow(b, e) {
-    let result = 1;
-    const operation = (e >= 0) ? multiply : divide;
-    e = Math.abs(e);
-    for (let i = 0; i < e; i++) {
-        result = operation(result, b);
-    }
-    return result;
+    return Math.pow(b, e);
 }
 
 // operate functions
